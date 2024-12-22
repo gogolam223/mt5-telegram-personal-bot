@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 import MetaTrader5 as mt5
 from datetime import datetime, timezone, timedelta
 from typing import List, Dict, Any, Literal
@@ -100,6 +101,9 @@ class MetaTrader:
 
 # Example usage
 if __name__ == "__main__":
+    # Load environment variables from .env file
+    load_dotenv()
+
     ticker = 'XAUUSD'
     server = os.getenv('MT5_SERVER')
     login = os.getenv('MT5_LOGIN')
